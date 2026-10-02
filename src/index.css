@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-burgundy-950: #3B070A;
+  --color-burgundy-900: #5B0F14;
+  --color-burgundy-800: #6E1117;
+  --color-burgundy-700: #7B151C;
+  --color-burgundy-600: #931B23;
+  --color-burgundy-500: #AB232D;
+
+  --color-cream-100: #FAF5EB;
+  --color-cream-200: #F7EEDC;
+  --color-cream-300: #F4E8D0;
+  --color-cream-400: #EFE0C4;
+  --color-cream-500: #E5D1AC;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light dark;
+  --bg-burgundy: #5B0F14;
+  --bg-cream: #F4E8D0;
+  --text-burgundy: #5B0F14;
+  --text-cream: #F4E8D0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-burgundy);
+  color: var(--text-cream);
+  overflow-x: hidden;
+  selection-background-color: #7B151C;
+  selection-color: #F4E8D0;
+}
+
+::selection {
+  background-color: #7B151C;
+  color: #F4E8D0;
+}
+
+/* Paper Grain Texture */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #3B070A;
+}
+::-webkit-scrollbar-thumb {
+  background: #7B151C;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #EFE0C4;
+}
+
+/* High-contrast luxury typography helpers */
+.font-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-editorial-italic {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+}
+
+/* Vertical Text */
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Subtle Mask & Border Gradients */
+.border-burgundy-thin {
+  border-color: rgba(91, 15, 20, 0.25);
+}
+
+.border-cream-thin {
+  border-color: rgba(244, 232, 208, 0.25);
+}
